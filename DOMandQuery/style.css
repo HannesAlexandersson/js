@@ -1,0 +1,43 @@
+body{
+    max-width: 500px;
+    margin: auto ;
+}
+.row{
+    display: flex;
+}
+.column{
+    background-color: green;
+    width: 50px;
+    height: 50px;
+    border:2px solid black;
+    position: relative;
+}
+.odd {
+    background-color: antiquewhite;
+}
+.number{
+    position: absolute;   
+}
+.letter{
+    position: absolute;
+    top:35px;
+    left: 35px;    
+}
+.even > .letter {
+    color: blue;
+}
+.odd > .letter {
+    color: goldenrod;
+}
+.even > .number {
+    color: red;
+}
+.odd > .number {
+    color: purple;
+}
+.selected {
+    background-color: hotpink;
+}
+#chessboard{
+    zoom:0%;
+}
