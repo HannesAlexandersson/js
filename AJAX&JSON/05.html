@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>06</title>
+    <style>
+      html,
+      body,
+      main {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+      }
+
+      /**
+       * Read more about gradients on Mozilla's developer network:
+       * https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
+       */
+      body {
+        background: linear-gradient(135deg, #353e50, #997e7e);
+        color: #fff;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        gap: 16px;
+      }
+
+      .actor {
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        display: flex;
+        color: white;
+        text-decoration: none;
+      }
+
+      /**
+       * Read more about filters on Mozilla's developer network:
+       * https://developer.mozilla.org/en/docs/Web/CSS/filter
+       */
+      .actor:hover img {
+        filter: grayscale(75%);
+      }
+
+      img {
+        border-radius: 50%;
+        border: 2px solid #fff;
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+      }
+
+      h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      const main = document.querySelector('main');
+
+      const addActor = (actor) => {
+        const link = document.createElement('a');
+        link.classList.add('actor');
+        link.href = actor.profile_url;
+
+        link.innerHTML = `
+          <img src="${actor.image_url}" />
+          <h2>${actor.name}</h2>
+          <p>${actor.character}</p>
+        `;
+
+        main.appendChild(link);
+      };
+
+      const getMovie = async () => {
+        try {
+          const res = await fetch(
+            'https://yrgo.github.io/api/movies/mean-girls.json'
+          );
+          const movie = await res.json();
+
+          movie.actors.forEach(addActor);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      getMovie();
+    </script>
+  </body>
+</html>

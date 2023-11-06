@@ -1,3 +1,65 @@
+//uppift 1
+
+ /* const data = `
+      {
+        "name": "Steve Carell",
+        "character": "Michael Scott",
+        "profile_url": "https://www.imdb.com/name/nm0136797/?ref_=tt_cl_t_1",
+        "image_url": "https://m.media-amazon.com/images/M/MV5BMjMyOTM2OTk1Ml5BMl5BanBnXkFtZTgwMTI3MzkyNjM@._V1_QL75_UX280_CR0,2,280,414_.jpg"
+      }
+      `;
+      const actor = JSON.parse(data);
+      const name = actor.name;
+      const character = actor.character;
+      const img = actor.image_url;
+      console.log(actor, character, img);
+
+
+ */
+
+
+      
+// för att ha en global variabel som kan nås överallt i koden
+/*
+const url = 'https://yrgo.github.io/api/movies/mean-girls.json';
+
+let movie; // Deklarera variabeln utan att tilldela något värde ännu
+
+async function getMovie() {// en funktion som hämtar (fetchar) datan från url:en. endpointen
+  const response = await fetch(url);
+  movie = await response.json(); // Spara resultatet i den globala "movie"-variabeln
+}
+
+(async () => {
+  await getMovie(); // Anropa funktionen för att hämta filmen
+  console.log(movie.title); // Komma åt "movie" utanför funktionen
+  console.log(movie.actors[0].character); // Komma åt specifika egenskaper
+})();
+
+
+// eller===>>>>
+let movie = {}; // Deklarera en global variabel för att lagra JSON-data
+
+async function getMovie() {
+  const response = await fetch('https://yrgo.github.io/api/movies/mean-girls.json');
+  movie = await response.json();
+}
+
+// Anropa getMovie() när sidan laddas
+window.onload = async function() {
+  await getMovie();
+  console.log(movie.title); // Du kan nu komma åt datan som ett JavaScript-objekt
+
+  // Logga movie.title igen
+  console.log(movie.title);
+};
+*/
+
+
+
+
+
+
 // uppgift 2
 /* 
 const url = 'https://yrgo.github.io/api/movies/mean-girls.json';
@@ -42,6 +104,7 @@ async function getMovie () {
 getMovie();
  */
 // uppgift 5
+/* 
 const url = 'https://yrgo.github.io/api/movies/mean-girls.json';
 async function getMovie () {
     const response = await fetch(url);
@@ -59,7 +122,10 @@ async function getMovie () {
     }
 }
 
-getMovie();
+getMovie(); 
+*/
+
+
 /* const apiUrl = 'https://yrgo.github.io/api/movies/mean-girls.json';
 
 

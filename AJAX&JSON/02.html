@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body">
+    <script>
+        //callback hell using fetch
+        const apiUrl = 'https://yrgo.github.io/api/movies/mean-girls.json';
+        /* 
+        const movieData = fetch(apiUrl);
+        fetch(apiUrl).then((response) => response.json())
+        .then((movie) => {
+            console.log(`The movie ${movie.title} was released ${movie.year}.`);
+            console.log('View the trailer on YouTube:', movie.trailer_url);
+        })
+        .catch((error) => console.log(error));
+         */
+        // modern async/await
+        let movie = {};
+        async function getMovie() {
+            const response = await fetch(apiUrl);
+            movie = await response.json();
+        }
+        window.onload = async function() {
+        await getMovie();
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <p>The movie ${movie.title} came out ${movie.year}</p>
+        <p>Watch the trailer <a href="${movie.trailer_url}">here</a></p>
+        `;
+        document.body.appendChild(div);
+        }
+        
+    </script>
+  </body>
+</html>

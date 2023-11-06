@@ -1,12 +1,8 @@
 body{
-    display: flex;
-    max-width: 30px;
+    display: flex;    
     background-color: lightgray;
-}
-img{
-    width: 20px;
-    height: 20px;
 }
 div{
     display: flex;
+    gap:1rem;
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>05</title>
+  </head>
+  <body>
+    <script>
+      const fetchMovie = async () => {
+        const res = await fetch(
+          'https://yrgo.github.io/api/movies/mean-girls.json'
+        );
+        const movie = await res.json();
+
+        movie.actors.forEach((actor) => {
+          console.log(`${actor.character} is played by ${actor.name}.`);
+        });
+      };
+
+      fetchMovie();
+    </script>
+  </body>
+</html>
