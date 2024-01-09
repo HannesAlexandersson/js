@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    Okay, we've learned about cookies in the browser. Though, the cookie 
+    API doesn't provide a good developer experience. The local storage 
+    API for example, provides a much better API and DX. Create a new file 
+    and name it 03.html. With local storage, set the item greeting to 
+    Hello Steve Zissou!. Then get the greeting item from the local storage and add it to 
+    the document.body.textContent property. If you visit the Local Storage page in the 
+    browser's developer tools you should see the greeting listed. The browser output should 
+    look like the text below.
+  -->
+  
+</body>
+<script>
+
+var greeting = 'Hello Steve Zissou!'; // sets the greeting string to the variable 'greeting'
+
+localStorage.setItem( 'greeting', greeting); // store the variabele data in localstorage, it declares the localstorageitem 'greeting' to the value of the variable greeting
+
+var bodyText = localStorage.getItem( 'greeting' ); // get the data from the local storage
+
+document.body.textContent = bodyText; //append the data to the bodys textcontent
+
+</script>
+</html>

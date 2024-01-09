@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cookie-consent</title>
+  <style>
+    body{
+      background-color: azure;
+    }
+    header{
+      width: 100%;
+      background-color: mediumblue;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    p{
+      color: white; 
+    }
+    button{
+      background-color:orchid;
+    }
+    .hide{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p>This website uses cookies to ensure you gets the best experience on our website.</p>
+    <button>Accept</button>
+  </header>
+
+  <script>
+    var header = document.getElementsByTagName('header');
+    var buttonC = document.getElementsByTagName('button');
+    var consent = false; 
+    consent = localStorage.getItem( 'cookie-consent');
+    if(consent){ // on load we check if the consent is true or not and if it is true we hide the consent container
+      header[0].classList.add('hide');
+    }
+
+
+    buttonC[0].addEventListener('click', function() { // eventlistener for the button, if pressed we store the consent
+      consent = true;
+      localStorage.setItem( 'cookie-consent', consent );      
+      header[0].classList.add('hide');      //and adds the hide class for the container
+    });
+    
+  </script>
+</body>
+</html>

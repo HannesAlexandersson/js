@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var actor = JSON.parse(localStorage.getItem( 'actor')); // gets the data from localstorage AND parse it back from JSON
+   
+    const imgElement = document.createElement('img'); // create and image element
+    imgElement.src = actor.imageUrl; // set the src to the stored datas image url
+    document.body.appendChild(imgElement); // append the image to the body of the document
+  </script>
+</body>
+</html>
