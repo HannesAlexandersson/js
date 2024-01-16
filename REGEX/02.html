@@ -22,10 +22,14 @@ should look like the list below. -->
   'walt@purdy',
 ];
 
+const regex = /^\'(\w+\@\w+\.\w+)\'/;
 
+function getValidEmail(email){
+   let validEmail = email.match(regex);
+   return validEmail;//returns true if it matches the rgex
+}
 emails.forEach((email) => {
-  const regex = /^\'(\w+\@\w+\.\w+)\'/;
-  let validEmail = email.match(regex);
+  if(getValidEmail(email))
   console.log(validEmail);
 });
 
