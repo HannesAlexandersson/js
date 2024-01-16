@@ -1,0 +1,35 @@
+<!-- Create a new file and name it 02.html. Copy the emails array from the resources
+directory. Loop through the email addresses and check if they are valid or not
+using the match method. If an email is valid, log it in the console. The output
+should look like the list below. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REGEX</title>
+</head>
+<body>
+  <script>
+    const emails = [
+  '@',
+  '@sabatini.mr',
+  'alexandria@',
+  'blue.bandit',
+  'roy@walk.er',
+  'sisterevel.yn',
+  'walt@purdy',
+];
+
+
+emails.forEach((email) => {
+  const regex = /^\'(\w+\@\w+\.\w+)\'/;
+  let validEmail = email.match(regex);
+  console.log(validEmail);
+});
+
+
+  </script>
+</body>
+</html>
