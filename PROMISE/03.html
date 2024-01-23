@@ -1,8 +1,3 @@
-Hannes
-.sanphlet
-Online
-
-Emil Årebrink — Idag 11:01
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -92,7 +87,7 @@ Emil Årebrink — Idag 11:01
           let utterance = new SpeechSynthesisUtterance(quote.quote);
           let voices = window.speechSynthesis.getVoices();
 
-          utterance.voice = voices[2];
+          utterance.voice = voices[1];
 
           speechSynthesis.speak(utterance);
         } catch (error) {
