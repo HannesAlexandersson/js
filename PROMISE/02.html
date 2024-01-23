@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>  
+  function ask(question) {
+    return new Promise((resolve, reject) => {
+      const userInput = window.prompt(question);
+
+      if(userInput === null) {
+        reject("User canceled");
+
+      }else {
+        resolve(userInput);
+      }
+    });
+  }
+
+
+    /* async function ask(question) {
+      try {
+        await askQuestion(question);
+      } catch (error) {
+        console.log('no answer');
+      }
+    }
+
+    async function askQuestion(question) {
+      const result = await window.prompt(question);
+      if (result !== null) {
+        return Promise.resolve(result);
+      } else {
+        return Promise.reject();
+      }
+    } */
+
+    ask('What is your first name?')
+      .then((firstName) => ask(`Oh hi, ${firstName}! How old are you?`))
+      .then((age) => window.alert(`${age}? That's a great age!`))
+      .catch(console.error);
+  </script>
+  
+</body>
+</html>

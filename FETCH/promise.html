@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const apiUrl = 'https://yrgo.github.io/api/movies/the-room.json';
+    async function getQuotes() {
+      const response = await fetch(apiUrl);
+      const quotes = await response.json();
+      console.log(`${quotes[5].quote} -${quotes[5].character}`);
+      /* quotes.forEach(quote => {
+        console.log(`The character ${quote.character} says the quote: ${quote.quote}`);
+      }); */
+    };
+    getQuotes();
+  </script>
+</body>
+</html>

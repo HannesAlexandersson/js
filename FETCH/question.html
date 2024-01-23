@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function ask(question) {
+      return new Promise((resolve, reject) => {
+      const userAnswer = window.prompt(question);
+
+      if (userAnswer !== null) {
+        // User answered the question
+        resolve(userAnswer);
+      } else {
+        // User didn't answer the question (clicked Cancel)
+        reject(new Error('User did not provide an answer.'));
+      }
+    });
+  }
+
+
+  //Use the code snippet below to test your code.
+  ask('What is your first name?')
+    .then((firstName) => ask(`Oh hi, ${firstName}! How old are you?`))
+    .then((age) => window.alert(`${age}? That's a great age!`))
+    .catch(console.error);
+  </script>
+</body>
+</html>
