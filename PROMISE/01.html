@@ -7,12 +7,25 @@
 </head>
 <body>
   <script>  
-  
-    (async ()  => {
+  // syncronius version
+    const apiUrl = 'https://yrgo.github.io/api/movies/the-room.json';
+    async function getQuotes() {
+      const response = await fetch(apiUrl);
+      const quotes = await response.json();
+      console.log(`${quotes[5].quote} -${quotes[5].character}`);
+      /* quotes.forEach(quote => {
+        console.log(`The character ${quote.character} says the quote: ${quote.quote}`);
+      }); */
+    };
+    getQuotes();
+
+
+  // arrow function version
+   /*  (async ()  => {
       const response = await fetch("https://yrgo.github.io/api/movies/the-room.json");
       const quote = await response.json();
       console.log(`${quote[0].quote} -${quote[0].character}`);
-    })();
+    })(); */
   </script>
 </body>
 

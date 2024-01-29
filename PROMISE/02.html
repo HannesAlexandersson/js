@@ -6,38 +6,28 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- Create a function called ask which accepts the argument question. It should trigger a window.prompt 
+  dialog with the given question. If the user answers the question, resolve the promise. If the user 
+  didn't answer the question, reject the promise. Use the code snippet below to test your code. -->
   <script>  
-  function ask(question) {
-    return new Promise((resolve, reject) => {
-      const userInput = window.prompt(question);
-
-      if(userInput === null) {
-        reject("User canceled");
-
+    function ask(question) {
+      return new Promise((resolve, reject) => {
+      const userAnswer = window.promt(question);
+      if(userAnswer !== null) {
+        resolve(question);
       }else {
-        resolve(userInput);
+        reject(new Error('User canceled the operation'));
       }
-    });
-  }
-
-
-    /* async function ask(question) {
-      try {
-        await askQuestion(question);
-      } catch (error) {
-        console.log('no answer');
-      }
+    })
     }
 
-    async function askQuestion(question) {
-      const result = await window.prompt(question);
-      if (result !== null) {
-        return Promise.resolve(result);
-      } else {
-        return Promise.reject();
-      }
-    } */
 
+     /*
+     When you use the .then method on a promise, it takes a callback function as an argument. 
+     This callback function receives the value that the promise was resolved with as its parameter. 
+     In this case, the ask function returns a promise, and when it resolves (when the user provides an answer), 
+     the callback function within the .then block is executed, and it receives the resolved value.
+     */
     ask('What is your first name?')
       .then((firstName) => ask(`Oh hi, ${firstName}! How old are you?`))
       .then((age) => window.alert(`${age}? That's a great age!`))
