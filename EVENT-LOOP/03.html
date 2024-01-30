@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03&04</title>
+</head>
+<body>
+  <script>
+    const delayInMilliseconds = 20;
+    let counter = 0;
+
+    // Store the interval ID in a variable to be able to stop it, since we need to pass it when we call the clear interval function
+    const intervalId = setInterval(function () {
+      console.log(`The Office Episode ${counter++}`);//logs the text and the counter witch increaments every iteration
+
+      // Check if counter reaches 188 and stop the interval
+      if (counter === 188) {
+        clearInterval(intervalId);//this is why we needed to store the interval in a variable
+      }
+    }, delayInMilliseconds);
+  </script>
+</body>
+</html>
