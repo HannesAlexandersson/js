@@ -14,7 +14,7 @@ const emojis = {
 
 // Function to replace emoji names with emoji characters in the Markdown text
 function replaceEmoji(text) {
-  // Iterate over each emoji name in the emoji map
+  // Iterate over each emoji name in the emoji array to find the match
   for (let emojiName in emojis) {
     // Create a regular expression to match the emoji name surrounded by colons
     const regex = new RegExp(emojiName, "g");
