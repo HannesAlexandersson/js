@@ -9,50 +9,40 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-//lift out the decoraters and have them as a independent functions with 2 arguments: jearsy and name
 function withName(jersey, name) {
     return __assign(__assign({}, jersey), { name: name });
 }
 function withNumber(jersey, number) {
     return __assign(__assign({}, jersey), { number: number });
 }
-function specificKit(jersey, variant) {
-    if (variant === void 0) { variant = 'home'; }
-    return __assign(__assign({}, jersey), { variant: variant });
+function withKit(jersey, kit) {
+    if (kit === void 0) { kit = 'home'; }
+    return __assign(__assign({}, jersey), { kit: kit });
 }
-//we will refactor the createJersey function so it return a basic Jersey object, 
-//without the chained decorator methods.
+// create jearsy now only creates the 2 set properties of the interface (size,club)
 function createJersey(size, club) {
     return { size: size, club: club };
 }
-//then chain them manually by calling them one by one with the values we want in our jearsy
-var myJersey = createJersey("XL", "St Louis Blues");
-myJersey = withName(myJersey, "Hull");
-myJersey = withNumber(myJersey, 16);
-myJersey = specificKit(myJersey, 'away');
+//let myJersey = createJersey("XL", "St Louis Blues").withName("Hull").specificKit('away')
+var myJersey = createJersey('sm', 'ifk Göteborg');
+myJersey = withName(myJersey, 'Hannes Alexandersson');
+myJersey = withNumber(myJersey, '13');
+myJersey = withKit(myJersey, 'away');
 console.log(myJersey);
-function CreateIceCream(cone, cup) {
-    return { cone: cone, cup: cup, };
+function CreateIceCream(scoops, container) {
+    return { scoops: scoops, container: container };
 }
-/* function withCondoment(iceCream: IceCream, condoment: string): IceCream {
-  return { ...iceCream, condoment }
-} */
-function withChocolate(iceCream) {
-    return __assign(__assign({}, iceCream), { chocolate: true });
+function withCheery(iceCream, cherry) {
+    return __assign(__assign({}, iceCream), { cherry: cherry });
 }
-function withSprinkles(iceCream) {
-    return __assign(__assign({}, iceCream), { sprinkles: true });
+function withChocolate(iceCream, chocolate) {
+    return __assign(__assign({}, iceCream), { chocolate: chocolate });
 }
-function withCream(iceCream) {
-    return __assign(__assign({}, iceCream), { cream: true });
+function withCream(iceCream, cream) {
+    return __assign(__assign({}, iceCream), { cream: cream });
 }
-var myIceCream = CreateIceCream(true, false);
-myIceCream = withChocolate(myIceCream);
-myIceCream = withSprinkles(myIceCream);
-myIceCream = withCream(myIceCream);
+var myIceCream = CreateIceCream(3, 'cup');
+myIceCream = withCheery(myIceCream, 'Cherry');
+myIceCream = withChocolate(myIceCream, 'Chocolate');
+myIceCream = withCream(myIceCream, 'Cream');
 console.log(myIceCream);
-/* let myIceCream = CreateIceCream(true);
-myIceCream = withCondoment(myIceCream, "chocolate syrup");
-myIceCream = withCondoment(myIceCream, "whipped cream");
-myIceCream = withCondoment(myIceCream, "cherry");
- */
