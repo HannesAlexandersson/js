@@ -1,0 +1,28 @@
+1. Start light by implementing the strategy pattern in sorter.js. 
+The file has three different sorting "strategies", so you just 
+have to write the code that makes it easy to switch between them.
+DONE
+
+2.Ok, it's time to finalize the Harry Potter Spell Manager. 
+Using a spell on a troll could be done with the strategy pattern. 
+To do this, we could need a strategies/spellStrategies.js in which we 
+define strategies for the different spell types, and preferably give 
+each an apply method. One way to do this is by defining an object for 
+the strategy and in that creates the apply function.
+
+3The apply function is where the magic happens (see what I did there?). 
+Your destructive magic could possibly harm or kill the troll, so it could 
+be great if the trolls health would be updated. One way to solve this is 
+by passing an update method to the apply method.
+
+4The update method could reside in the context file, where you probably 
+already have an addTroll function.
+
+5If not already in place, it could be nice with some component that 
+shows trolls and their status, so that you can see if they're being 
+transformed or hurt.
+
+6Very good job, muggler/magician. By examining these six design 
+patterns, you may have increased or widened your coding skills, 
+or maybe just realized that what you've always been doing has a 
+cool name. Nice.
